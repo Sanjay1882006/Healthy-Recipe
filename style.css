@@ -1,0 +1,348 @@
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins";
+}
+
+body {
+    background-color: white;
+    padding: 0.3rem 4rem;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.menu {
+    width: 100%;
+    height: 76vh;
+    display: flex;
+    border-radius: 10px;
+    position: relative;
+    /* box-shadow: 2px 2px 15px 5px gray; */
+}
+
+.outer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.left-con {
+    background-color: orange;
+    height: 100%;
+    width: 50%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px 0 0 10px;
+    transition: 0.3s ease-in;
+}
+
+.right-con {
+    background-color: black;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    padding: 2rem 3rem;
+    row-gap: 3rem;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s ease-in;
+}
+
+.left-con:hover,
+.right-con:hover {
+    cursor: pointer;
+    transform: scale(1.001) !important;
+    box-shadow: 2px 2px 10px 3px gray !important;
+}
+
+.right-con:hover {
+    background-color: #9EBC8A !important;
+    /* width: 50.5vw; */
+}
+
+.left-con:hover {
+    background-color: #DDEB9D;
+    /* width: 50.5vw; */
+}
+
+.right-con:hover~.left-con {
+    background-color: #9EBC8A !important;
+    width: 49.5vw;
+}
+
+
+
+.slider {
+    width: 100%;
+    height: var(--height);
+    margin-top: 0.3rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+
+.list {
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    column-gap: 0.5rem;
+    position: relative;
+}
+
+.item {
+    width: var(--width); 
+    height: var(--height);
+    background-color: orange;
+    padding: 0.3rem;
+    border-radius: 7px;
+    position: absolute;
+    left: 100%;
+    animation: autoRun 15s linear infinite;
+    transition: 0.5s;
+    text-align: center;
+    color: white;
+    animation-delay: calc((15s / var(--quantity)) * (var(--position) - 1));
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+h4 {
+    font-family: "Dancing Script", cursive;
+    font-weight: 900;
+    font-size: 1.5rem;
+    transform: translateY(-6rem);
+}
+
+.item img {
+    width: 100%;
+    border-radius: 7px;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }
+    to {
+        left: calc(var(--width) * -1);
+    }
+}
+
+.slider:hover .item {
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+}
+
+.item:hover {
+    filter: grayscale(0) !important;
+}
+
+.image {
+    width: 60%;
+    margin-top: 1.5rem;
+    border-radius: 50%;
+    animation: rotate 25s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
+}
+
+h2 {
+    color: orange;
+    font-family: "ICA Rubrik";
+}
+
+h2+p {
+    color: white;
+    margin-top: 0.4rem;
+}
+
+h1 {
+    font-family: "Lobster", sans-serif;
+    color: white;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.change-me{
+    font-size: 3.4rem;
+}
+
+input {
+    display: none;
+}
+
+
+
+#daltadka1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#smoothie1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Chicken1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Upma1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Paneer1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Salad1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Roti1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+    z-index: -10;
+}
+
+#Sprouts1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Khichdi1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+#Poha1 {
+    animation: hide1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: -10;
+}
+
+
+#daltadka:checked~#daltadka1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#smoothie:checked~#smoothie1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Chicken:checked~#Chicken1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Upma:checked~#Upma1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Paneer:checked~#Paneer1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Salad:checked~#Salad1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Roti:checked~#Roti1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+#Sprouts:checked~#Sprouts1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Khichdi:checked~#Khichdi1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+#Poha:checked~#Poha1{
+    animation: show1 1s ease-in;
+    animation-fill-mode: forwards;
+    z-index: 10;
+}
+
+@keyframes show1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes hide1 {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
